@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stripe-payment
+  labels:
+    app: stripe-payment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stripe-payment
+  template:
+    metadata:
+      labels:
+        app: stripe-payment
+    spec:
+      containers:
+        - name: stripe-payment
+          image: stripe/stripe-cli
+          ports:
+            - containerPort: 4242
+          env:
+            - name: STRIPE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: stripe-secret
+                  key: STRIPE_SECRET_KEY

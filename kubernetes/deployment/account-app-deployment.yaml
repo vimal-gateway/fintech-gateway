@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-app
+  labels:
+    app: account-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: account-app
+  template:
+    metadata:
+      labels:
+        app: account-app
+    spec:
+      containers:
+        - name: account-app
+          image: fintech-container/account-app:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DATABASE_URL
+              value: "Server=mssql-service;Database=mydatabase;User Id=sa;Password=YourStrong!Passw0rd;"

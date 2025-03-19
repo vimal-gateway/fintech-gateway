@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-admin-app
+  labels:
+    app: backend-admin-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-admin-app
+  template:
+    metadata:
+      labels:
+        app: backend-admin-app
+    spec:
+      containers:
+        - name: backend-admin-app
+          image: fintech-container/backend-admin-app:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE_URL
+              value: "Server=mssql-service;Database=mydatabase;UserId=sa;Password=YourStrong!Passw0rd;"

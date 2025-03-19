@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: investment-app
+  labels:
+    app: investment-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: investment-app
+  template:
+    metadata:
+      labels:
+        app: investment-app
+    spec:
+      containers:
+        - name: investment-app
+          image: fintech-container/investment-app:latest
+          ports:
+            - containerPort: 3002
+          env:
+            - name: DATABASE_URL
+              value: "Server=mssql-service;Database=mydatabase;User Id=sa;Password=YourStrong!Passw0rd;"

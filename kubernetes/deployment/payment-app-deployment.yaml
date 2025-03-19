@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-app
+  labels:
+    app: payment-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: payment-app
+  template:
+    metadata:
+      labels:
+        app: payment-app
+    spec:
+      containers:
+        - name: payment-app
+          image: fintech-container/payment-app:latest
+          ports:
+            - containerPort: 3003
+          env:
+            - name: DATABASE_URL
+              value: "Server=mssql-service;Database=mydatabase;UserId=sa;Password=YourStrong!Passw0rd;"
