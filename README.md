@@ -53,18 +53,18 @@ cd docker/transaction-app
 npm install
 ```
 
-### Deploys Kubernetes (AKS) for microservices
-### Creates Azure SQL Server & Cosmos DB for storage
-### Adds Redis for caching & Key Vault for secrets
-### Sets up Stripe Payment Gateway secrets
-### Configures Security (Firewall, NSG)
-### Deploys Log Analytics & App Insights for monitoring
+### **Deploys Kubernetes (AKS) for microservices**
+### **Creates Azure SQL Server & Cosmos DB for storage**
+### **Adds Redis for caching & Key Vault for secrets**
+### **Sets up Stripe Payment Gateway secrets**
+### **Configures Security (Firewall, NSG)**
+### **Deploys Log Analytics & App Insights for monitoring**
 
-### Create an AKS Cluster (if not already created)
-### Write a Dockerfile for the Node.js application
-### Create Kubernetes manifests (deployment.yaml, service.yaml, etc.)
-### Set up a CI/CD pipeline in Azure DevOps (azure-pipelines.yml)
-### Deploy the application to AKS
+### **Create an AKS Cluster (if not already created)**
+### **Write a Dockerfile for the Node.js application**
+### **Create Kubernetes manifests (deployment.yaml, service.yaml, etc.)**
+### **Set up a CI/CD pipeline in Azure DevOps (azure-pipelines.yml)**
+### **Deploy the application to AKS**
 
 ### **3. Run Locally with Docker Compose**
 ```sh
