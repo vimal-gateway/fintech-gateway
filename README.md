@@ -1,9 +1,8 @@
-# ###################################################################
-# ################ FINTECH - GATEWAY BANKING SYSTEMS ################
-# ###################################################################
+# #################################
+# FINTECH - GATEWAY BANKING SYSTEMS
+# #################################
 
 ## **README.md (Solution Configuration Guide)**
-```md
 # Fintech Platform Boilerplate
 
 ## **Overview**
